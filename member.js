@@ -1,8 +1,13 @@
-function skillsmember() {
-    var x = document.getElementById("skills");
-    var y = document.getElementById("member");
-    var z = document.getElementById("skillsmember");
-    x.style.display = "none";
-    y.style.display = "block";
-    z.style.display = "none";
+function skillsMember() {
+    var member = {
+        name: 'John',
+        age: 30,
+        skills: ['JS', 'React', 'Node'],
+        showSkills: function() {
+            this.skills.forEach(function(skill) {
+                console.log(this.name + ' knows ' + skill);
+            }.bind(this));
+        }
+    };
+    member.showSkills();
 }
